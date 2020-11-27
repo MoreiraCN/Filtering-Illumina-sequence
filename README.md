@@ -20,7 +20,14 @@ Bolger AM, Lohse M, Usadel B (2014) Trimmomatic: A flexible trimmer for Illumina
 
 The process were performed using Trimmomatic with the set of Illumina adapters from BBMap. FastQC was used to verify the libraries quality and to determine the parameters to be used.
 
-Parameters:
+Parameters used:
+- phred33: Specifies the base quality encoding
+- ILLUMINACLIP: Will cut the adapters and other illumina-specific sequences from the read.
+- LEADING: Will cut bases off the start of a read, if below a threshold quality.
+- TRAILING: Will cut bases off the end of a read, if below a threshold quality.
+- SLIDINGWINDOW: Will performs a sliding window trimming approach. It starts scanning at the 5‟ end and clips the read once the average quality within the window falls below a threshold.
+- HEADCROP: Will cut the specified number of bases from the start of the read.
+- MINLEN: Wil drop the read if it is below a specified length.
 
-Comand line:
-
+Comand line used:
+java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 read_r1.fastq read_r2.fastq out_r1_paired.fq.gz out_r1_unpaired.fq.gz out_r2_paired.fq.gz out_r2_unpaired.fq.gz ILLUMINACLIP:/bbmap/resources/adapters.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 HEADCROP:15 MINLEN:95
