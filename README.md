@@ -9,6 +9,7 @@ FastQC v0.10.1
 http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 
 BBMap_38.49.tar
+´´´
 https://jgi.doe.gov/data-andtools/bbtools/bb-tools-user-guide/bbduk-guide/
 
 Trimmomatic-0.39.zip
