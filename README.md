@@ -1,9 +1,9 @@
-## Filtering Illumina sequence
+### Filtering Illumina sequence
 
 The following pipeline was used to filter Illumina sequence of two sets of data: (i) whole genomic DNA (gDNA); and (ii) probe of entire chromosome (obtained by flow sorting and fragmented by a DOP-PCR reaction). Both samples from the species *Holochilus sciureus* (2n = 56, NF = 56), a Neotropical rodent of Oryzomyini tribe.
 
 
-### Softwares used
+**Softwares used:**
 
 FastQC v0.10.1 | http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 
@@ -12,7 +12,7 @@ BBMap_38.49 | https://jgi.doe.gov/data-andtools/bbtools/bb-tools-user-guide/bbdu
 Trimmomatic-0.39 | http://www.usadellab.org/cms/?page=trimmomatic | Bolger AM, Lohse M, Usadel B (2014) Trimmomatic: A flexible trimmer for Illumina Sequence Data. Bioinformatics, 30(15):2114–2120.
 
 
-### Whole genomic DNA
+**Whole genomic DNA**
 
 The filtering was performed using Trimmomatic with the set of Illumina adapters from BBMap. FastQC was used to verify the libraries quality and set the parameters to be used.
 
@@ -21,7 +21,7 @@ Command line used:
 java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 read_r1.fastq read_r2.fastq out_r1_paired.fq.gz out_r1_unpaired.fq.gz out_r2_paired.fq.gz out_r2_unpaired.fq.gz ILLUMINACLIP:/bbmap/resources/adapters.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 HEADCROP:15 MINLEN:95
 
 
-### Probe of entire chromosome
+**Probe of entire chromosome**
 
 This library was process by a DOP-PCR reaction prior to sequencing, resulting in more fragmented sequences harbouring DOP-PCR primer sequence (6MW - 5' CCGACTCGAGNNNNNNATGTGG 3'). The filtering was also performed using Trimmomatic with the set of Illumina adapters from BBMap, but was performed in three steps: (i) filtering of Illumina adapters; (ii) filtering of 6MW sequence and quality patterns; (iii) cut of the first thirty bases from the start of the read. In order to filter 6MW sequence, a file containing this sequence was included in the directory Trimmomatic-0.39/adapters/. FastQC was used to verify the libraries quality and set the parameters to be used.
 
@@ -38,7 +38,7 @@ Command line used for step iii:
 java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out2_r1_paired.fq out2_r2_paired.fq out3_r1_paired.fq out3_r1_unpaired.fq out3_r2_paired.fq out3_r2_unpaired.fq HEADCROP:30 MINLEN:95
 
 
-### Parameters used
+**Parameters used**
 
 - phred33: Specifies the base quality encoding.
 - ILLUMINACLIP: Will cut the adapters and other illumina-specific sequences from the read.
