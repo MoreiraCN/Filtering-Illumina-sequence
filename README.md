@@ -23,7 +23,7 @@ java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 read_r1.fastq read_r
 
 ### Probe of entire chromosome
 
-This library was process by a DOP-PCR reaction prior to sequencing, resulting in more fragmented sequences harbouring DOP-PCR primer sequence (6MW - 5' CCGACTCGAGNNNNNNATGTGG 3'). The filtering was also performed using Trimmomatic with the set of Illumina adapters from BBMap, but was performed in three steps: (i) filtering of Illumina adapters; (ii) filtering of 6MW sequence and quality patterns; (iii) cut of the first thirty bases of each sequence. In order to filter 6MW sequence, a file containing this sequence was included in the directory Trimmomatic-0.39/adapters/. FastQC was used to verify the libraries quality and set the parameters to be used.
+This library was process by a DOP-PCR reaction prior to sequencing, resulting in more fragmented sequences harbouring DOP-PCR primer sequence (6MW - 5' CCGACTCGAGNNNNNNATGTGG 3'). The filtering was also performed using Trimmomatic with the set of Illumina adapters from BBMap, but was performed in three steps: (i) filtering of Illumina adapters; (ii) filtering of 6MW sequence and quality patterns; (iii) cut of the first thirty bases from the start of the read. In order to filter 6MW sequence, a file containing this sequence was included in the directory Trimmomatic-0.39/adapters/. FastQC was used to verify the libraries quality and set the parameters to be used.
 
 Command line used for step i:
 
