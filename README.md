@@ -34,6 +34,7 @@ Command line used for step ii:
 java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out1_r1_paired.fq out1_r2_paired.fq out2_r1_paired.fq.gz out2_r1_unpaired.fq.gz out2_r2_paired.fq.gz out2_r2_unpaired.fq.gz ILLUMINACLIP:Trimmomatic-0.39/adapters/6MW-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:95
 
 Command line used for step iii:
+
 java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out2_r1_paired.fq out2_r2_paired.fq out3_r1_paired.fq out3_r1_unpaired.fq out3_r2_paired.fq out3_r2_unpaired.fq HEADCROP:30 MINLEN:95
 
 
