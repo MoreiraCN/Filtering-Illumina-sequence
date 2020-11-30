@@ -16,7 +16,7 @@ Trimmomatic-0.39 | http://www.usadellab.org/cms/?page=trimmomatic | Bolger AM, L
 
 The filtering was performed using Trimmomatic with the set of Illumina adapters from BBMap. FastQC was used to verify the libraries quality and set the parameters to be used.
 
-Command line used:
+- Command line used:
 
 java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 read_r1.fastq read_r2.fastq out_r1_paired.fq.gz out_r1_unpaired.fq.gz out_r2_paired.fq.gz out_r2_unpaired.fq.gz ILLUMINACLIP:/bbmap/resources/adapters.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 HEADCROP:15 MINLEN:95
 
@@ -25,15 +25,15 @@ java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 read_r1.fastq read_r
 
 This library was process by a DOP-PCR reaction prior to sequencing, resulting in more fragmented sequences harbouring DOP-PCR primer sequence (6MW - 5' CCGACTCGAGNNNNNNATGTGG 3'). The filtering was also performed using Trimmomatic with the set of Illumina adapters from BBMap, but was performed in three steps: (i) filtering of Illumina adapters; (ii) filtering of 6MW sequence and quality patterns; (iii) cut of the first thirty bases from the start of the read. In order to filter 6MW sequence, a file containing this sequence was included in the directory Trimmomatic-0.39/adapters/. FastQC was used to verify the libraries quality and set the parameters to be used.
 
-Command line used for step i:
+- Command line used for step i:
 
 java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 read_r1.fastq read_r2.fastq out1_r1_paired.fq.gz out1_r1_unpaired.fq.gz out1_r2_paired.fq.gz out1_r2_unpaired.fq.gz ILLUMINACLIP:/bbmap/resources/adapters.fa:2:30:10
 
-Command line used for step ii:
+- Command line used for step ii:
 
 java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out1_r1_paired.fq out1_r2_paired.fq out2_r1_paired.fq.gz out2_r1_unpaired.fq.gz out2_r2_paired.fq.gz out2_r2_unpaired.fq.gz ILLUMINACLIP:Trimmomatic-0.39/adapters/6MW-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:95
 
-Command line used for step iii:
+- Command line used for step iii:
 
 java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out2_r1_paired.fq out2_r2_paired.fq out3_r1_paired.fq out3_r1_unpaired.fq out3_r2_paired.fq out3_r2_unpaired.fq HEADCROP:30 MINLEN:95
 
