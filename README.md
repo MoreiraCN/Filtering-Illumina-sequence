@@ -40,12 +40,12 @@ java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out2_r1_filtered_pai
 
 ### Parameters used:
 
-- phred33: Specifies the base quality encoding.
-- ILLUMINACLIP: Will cut the adapters and other illumina-specific sequences from the read.
-- LEADING: Will cut bases off the start of a read, if below a threshold quality.
-- TRAILING: Will cut bases off the end of a read, if below a threshold quality.
-- SLIDINGWINDOW: Will performs a sliding window trimming approach. It starts scanning at the 5‟ end and clips the read once the average quality within the window falls below a threshold.
-- HEADCROP: Will cut the specified number of bases from the start of the read.
-- MINLEN: Will drop the read if it is below a specified length.
+- phred33: specifies the base quality encoding.
+- ILLUMINACLIP: will cut the adapters and other illumina-specific sequences from the read.
+- LEADING: will cut bases off the start of a read, if below a threshold quality.
+- TRAILING: will cut bases off the end of a read, if below a threshold quality.
+- SLIDINGWINDOW: will performs a sliding window trimming approach. It starts scanning at the 5‟ end and clips the read once the average quality within the window falls below a threshold.
+- HEADCROP: will cut the specified number of bases from the start of the read.
+- MINLEN: will drop the read if it is below a specified length.
 
 For more details see: http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf
