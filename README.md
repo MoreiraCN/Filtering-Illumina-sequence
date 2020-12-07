@@ -18,7 +18,7 @@ The filtering was performed using Trimmomatic with the set of Illumina adapters 
 
 - Command line used:
 
-java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 read_r1.fastq read_r2.fastq out_r1_paired.fq.gz out_r1_unpaired.fq.gz out_r2_paired.fq.gz out_r2_unpaired.fq.gz ILLUMINACLIP:/bbmap/resources/adapters.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 HEADCROP:15 MINLEN:95
+java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 read_r1.fastq read_r2.fastq out_r1_filtered_paired.fq.gz out_r1_filtered_unpaired.fq.gz out_r2_filtered_paired.fq.gz out_r2_filtered_unpaired.fq.gz ILLUMINACLIP:/bbmap/resources/adapters.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 HEADCROP:15 MINLEN:95
 
 
 **Probe of entire chromosome:**
@@ -27,15 +27,15 @@ This library was process by a DOP-PCR reaction prior to sequencing, resulting in
 
 - Command line used for step i:
 
-java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 read_r1.fastq read_r2.fastq out1_r1_paired.fq.gz out1_r1_unpaired.fq.gz out1_r2_paired.fq.gz out1_r2_unpaired.fq.gz ILLUMINACLIP:/bbmap/resources/adapters.fa:2:30:10
+java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 read_r1.fastq read_r2.fastq out1_r1_filtered_paired.fq.gz out1_r1_filtered_unpaired.fq.gz out1_r2_filtered_paired.fq.gz out1_r2_filtered_unpaired.fq.gz ILLUMINACLIP:/bbmap/resources/adapters.fa:2:30:10
 
 - Command line used for step ii:
 
-java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out1_r1_paired.fq out1_r2_paired.fq out2_r1_paired.fq.gz out2_r1_unpaired.fq.gz out2_r2_paired.fq.gz out2_r2_unpaired.fq.gz ILLUMINACLIP:Trimmomatic-0.39/adapters/6MW-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:95
+java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out1_r1_filtered_paired.fq out1_r2_paired.fq out2_r1_filtered_paired.fq.gz out2_r1_filtered_unpaired.fq.gz out2_r2_filtered_paired.fq.gz out2_r2_filtered_unpaired.fq.gz ILLUMINACLIP:Trimmomatic-0.39/adapters/6MW-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:95
 
 - Command line used for step iii:
 
-java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out2_r1_paired.fq out2_r2_paired.fq out3_r1_paired.fq out3_r1_unpaired.fq out3_r2_paired.fq out3_r2_unpaired.fq HEADCROP:30 MINLEN:95
+java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out2_r1_filtered_paired.fq out2_r2_filtered_paired.fq out3_r1_filtered_paired.fq out3_r1_filtered_unpaired.fq out3_r2_filtered_paired.fq out3_r2_filtered_unpaired.fq HEADCROP:30 MINLEN:95
 
 
 **Parameters used:**
@@ -47,3 +47,5 @@ java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out2_r1_paired.fq ou
 - SLIDINGWINDOW: Will performs a sliding window trimming approach. It starts scanning at the 5‟ end and clips the read once the average quality within the window falls below a threshold.
 - HEADCROP: Will cut the specified number of bases from the start of the read.
 - MINLEN: Will drop the read if it is below a specified length.
+
+For more details see: http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf
