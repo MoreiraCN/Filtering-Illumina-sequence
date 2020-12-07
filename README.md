@@ -2,15 +2,13 @@
 
 The following pipeline was used to filter Illumina sequences of two sets of data: (i) whole genomic DNA (gDNA); and (ii) probe of entire chromosome (obtained by flow sorting and fragmented by a DOP-PCR reaction). Both samples from the species *Holochilus sciureus* (2n = 56, NF = 56), a Neotropical rodent of Oryzomyini tribe.
 
-
-**Softwares used:**
+- Softwares used:
 
 FastQC v0.10.1 | http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 
 BBMap_38.49 | https://jgi.doe.gov/data-andtools/bbtools/bb-tools-user-guide/bbduk-guide/ | Bushnell B, Rood J, Singer E (2017) BBMerge–accurate paired shotgun read merging via overlap. PloS one, 12(10),e0185056.
 
 Trimmomatic-0.39 | http://www.usadellab.org/cms/?page=trimmomatic | Bolger AM, Lohse M, Usadel B (2014) Trimmomatic: A flexible trimmer for Illumina Sequence Data. Bioinformatics, 30(15):2114–2120.
-
 
 ### Whole genomic DNA:
 
@@ -19,7 +17,6 @@ The filtering was performed using Trimmomatic with the set of Illumina adapters 
 - Command line used:
 
 java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 read_r1.fastq read_r2.fastq out_r1_filtered_paired.fq.gz out_r1_filtered_unpaired.fq.gz out_r2_filtered_paired.fq.gz out_r2_filtered_unpaired.fq.gz ILLUMINACLIP:/bbmap/resources/adapters.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 HEADCROP:15 MINLEN:95
-
 
 ### Probe of entire chromosome:
 
@@ -36,7 +33,6 @@ java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out1_r1_filtered_pai
 - Command line used for step iii:
 
 java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out2_r1_filtered_paired.fq out2_r2_filtered_paired.fq out3_r1_filtered_paired.fq out3_r1_filtered_unpaired.fq out3_r2_filtered_paired.fq out3_r2_filtered_unpaired.fq HEADCROP:30 MINLEN:95
-
 
 ### Parameters used:
 
