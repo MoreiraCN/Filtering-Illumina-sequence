@@ -44,4 +44,4 @@ java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out2_r1_filtered_pai
 - HEADCROP: will cut the specified number of bases from the start of the read.
 - MINLEN: will drop the read if it is below a specified length.
 
-For more details see: http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf
+For more details see http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf.
