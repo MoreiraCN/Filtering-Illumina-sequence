@@ -4,11 +4,11 @@ The following pipeline was used to filter Illumina sequences of two sets of data
 
 - Softwares used:
 
-FastQC v0.10.1 | http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+[FastQC v0.10.1](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
-BBMap_38.49 | https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/ | Bushnell B, Rood J, Singer E (2017) BBMerge–accurate paired shotgun read merging via overlap. PloS one, 12(10),e0185056.
+[BBMap_38.49](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/) Bushnell B, Rood J, Singer E (2017) BBMerge–accurate paired shotgun read merging via overlap. PloS one, 12(10),e0185056.
 
-Trimmomatic-0.39 | http://www.usadellab.org/cms/?page=trimmomatic | Bolger AM, Lohse M, Usadel B (2014) Trimmomatic: A flexible trimmer for Illumina Sequence Data. Bioinformatics, 30(15):2114–2120.
+[Trimmomatic-0.39](http://www.usadellab.org/cms/?page=trimmomatic) Bolger AM, Lohse M, Usadel B (2014) Trimmomatic: A flexible trimmer for Illumina Sequence Data. Bioinformatics, 30(15):2114–2120.
 
 ### Whole genomic DNA:
 
@@ -44,4 +44,4 @@ java -jar Trimmomatic-0.39/trimmomatic-0.39.jar PE -phred33 out2_r1_filtered_pai
 - HEADCROP: will cut the specified number of bases from the start of the read.
 - MINLEN: will drop the read if it is below a specified length.
 
-For more details see http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf.
+For more details see [supplementary information](http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf).
