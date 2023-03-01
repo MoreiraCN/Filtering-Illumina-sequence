@@ -1,6 +1,6 @@
 ### Filtering Illumina sequences
 
-The following pipeline was used to filter Illumina sequences of two sets of data: (1) whole genomic DNA (gDNA); and (2) probe of entire chromosome (obtained by flow sorting and fragmented by a DOP-PCR reaction). Both samples from the species *Holochilus sciureus* (2n = 56, NF = 56), a Neotropical rodent of tribe Oryzomyini.
+The following pipeline was used to filter Illumina sequences of two sets of data: (1) whole genomic DNA (gDNA); and (2) probe of entire chromosome (obtained by flow sorting and fragmented by a DOP-PCR reaction). Both samples from the species *Holochilus nanus* (2n = 56, NF = 56), a Neotropical rodent of tribe Oryzomyini.
 
 **Softwares used:**
 
